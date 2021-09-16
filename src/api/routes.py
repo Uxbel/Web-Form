@@ -24,7 +24,10 @@ def login():
     user = User.query.filter_by(email = User.email).first()
     if(user is None):
         return "user not exist", 404
-    #generar token y retornar el "access token"
+  
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
+
 
     response_body = {
         "m": "Hello! I'm a message that came from the backend"
@@ -44,8 +47,10 @@ def register():
     new_user = User(name = name, email = email, password = password, city_id = city_id)
     db.session.add(new_user)
     db.session.commit()
-    #generar token y retornar el "access token"
-       # return "user created successfully", 200
+   
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token), "User created successfully", 200
+
 
     response_body = {
         "message": "Hello! I'm a message that came from the backend"
