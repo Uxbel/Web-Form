@@ -5,6 +5,13 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User
 from api.utils import generate_sitemap, APIException
 
+from flask_jwt_extended import create_access_token
+from flask_jwt_extended import current_user
+from flask_jwt_extended import jwt_required
+from flask_jwt_extended import JWTManager
+
+app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
+
 api = Blueprint('api', __name__)
 
 
@@ -21,16 +28,17 @@ def handle_home():
 def login():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    user = User.query.filter_by(email = User.email).first()
-    if(user is None):
+    user = User.query.filter_by(email = email).first()
+    print(user.password)
+    if(user.password != password or user is None):
         return "user not exist", 404
   
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    #access_token = create_access_token(identity=email)
+    #return jsonify(access_token=access_token)
 
 
     response_body = {
-        "m": "Hello! I'm a message that came from the backend"
+        "message": "Token: Access Token"
     }
 
     return jsonify(response_body), 200
@@ -41,15 +49,15 @@ def register():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     city_id = request.json.get("city_id", None)
-    user = User.query.filter_by(email = User.email).first()
+    user = User.query.filter_by(email = email).first()
     if(user):
         return "user exist", 400
     new_user = User(name = name, email = email, password = password, city_id = city_id)
     db.session.add(new_user)
     db.session.commit()
    
-    access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token), "User created successfully", 200
+    #access_token = create_access_token(identity=email)
+    #return jsonify(access_token=access_token), "User created successfully", 200
 
 
     response_body = {

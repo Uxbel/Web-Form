@@ -14,21 +14,21 @@ export const Home = () => {
 				<div className="col-12">
 					<div className="card">
 						<div className="row p-5">
-							<div className="col-4 p-1">
+							<div className="col-sm">
 								<h1>Welcome</h1>
 								<img src={rigoImageUrl} />
 							</div>
-							<div className="col-8 pl-5">
+							<div className="col-sm">
 								<div className="alert alert-info">
 									{store.message || "Loading message from the backend..."}
 								</div>
 								<div className="d-flex flex-column bd-highlight mb-3">
 									<Link to="/register">
-										<button type="button" className="btn btn-primary mb-3 mt-5">
+										<button type="button" className="btn btn-primary btn-lg btn-block mb-3 mt-5">
 											Create Account
 										</button>
 									</Link>
-									<button type="button" className="btn btn-outline-primary">
+									<button type="button" className="btn btn-outline-primary btn-lg btn-block">
 										Login
 									</button>
 								</div>
