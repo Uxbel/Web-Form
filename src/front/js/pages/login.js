@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
-import "../../styles/home.scss";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
-export const Home = () => {
+import { Context } from "../store/appContext";
+
+import "../../styles/demo.scss";
+
+export const Login = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -15,7 +16,7 @@ export const Home = () => {
 					<div className="card">
 						<div className="row p-5">
 							<div className="col-4 p-1">
-								<h1>Welcome</h1>
+								<h1>Login</h1>
 								<img src={rigoImageUrl} />
 							</div>
 							<div className="col-8 pl-5">
@@ -23,11 +24,9 @@ export const Home = () => {
 									{store.message || "Loading message from the backend..."}
 								</div>
 								<div className="d-flex flex-column bd-highlight mb-3">
-									<Link to="/register">
-										<button type="button" className="btn btn-primary mb-3 mt-5">
-											Create Account
-										</button>
-									</Link>
+									<button type="button" className="btn btn-primary mb-3 mt-5">
+										Create Account
+									</button>
 									<button type="button" className="btn btn-outline-primary">
 										Login
 									</button>
