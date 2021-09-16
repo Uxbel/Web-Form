@@ -45,7 +45,7 @@ def register():
     db.session.add(new_user)
     db.session.commit()
     #generar token y retornar el "access token"
-        return "user created successfully", 200
+       # return "user created successfully", 200
 
     response_body = {
         "message": "Hello! I'm a message that came from the backend"
