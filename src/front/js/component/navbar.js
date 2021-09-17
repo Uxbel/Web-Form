@@ -9,8 +9,8 @@ export const Navbar = () => {
 					<span className="navbar-brand mb-0 h1">Web Form</span>
 				</Link>
 				<div className="ml-auto">
-					<Link to="/register">
-						<button className="btn btn-primary">Check the Context in action</button>
+					<Link to="/userInfo">
+						<button className="btn btn-primary">User Info</button>
 					</Link>
 				</div>
 			</div>

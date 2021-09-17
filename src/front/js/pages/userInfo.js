@@ -17,20 +17,41 @@ export const UserInfo = () => {
 						<div className="row p-5">
 							<div className="col-4 p-1">
 								<h1>User Info</h1>
-								<img src={rigoImageUrl} />
 							</div>
 							<div className="col-8 pl-5">
 								<div className="alert alert-info">
-									{store.message || "Loading message from the backend..."}
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
 								</div>
-								<div className="d-flex flex-column bd-highlight mb-3">
-									<button type="button" className="btn btn-primary mb-3 mt-5">
-										Create Account
-									</button>
-									<button type="button" className="btn btn-outline-primary">
-										Login
-									</button>
-								</div>
+								<table className="table">
+									<thead>
+										<tr>
+											<th scope="col">#</th>
+											<th scope="col">User Info</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th scope="row">Name</th>
+											<td>Mark</td>
+										</tr>
+										<tr>
+											<th scope="row">Email</th>
+											<td>mark@gmail.com</td>
+										</tr>
+										<tr>
+											<th scope="row">Password</th>
+											<td>***********</td>
+										</tr>
+										<tr>
+											<th scope="row">City</th>
+											<td>Madrid</td>
+										</tr>
+										<tr>
+											<th scope="row">Country</th>
+											<td>Spain</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>

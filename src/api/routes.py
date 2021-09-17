@@ -10,7 +10,7 @@ from flask_jwt_extended import current_user
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
-app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
+#app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 
 api = Blueprint('api', __name__)
 

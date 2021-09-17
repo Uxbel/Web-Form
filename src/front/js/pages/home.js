@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
+import home from "../../img/home.png";
 import "../../styles/home.scss";
 import { Link } from "react-router-dom";
 
@@ -16,11 +17,12 @@ export const Home = () => {
 						<div className="row p-5">
 							<div className="col-sm">
 								<h1>Welcome</h1>
-								<img src={rigoImageUrl} />
+								<img src={home} />
 							</div>
 							<div className="col-sm">
 								<div className="alert alert-info">
-									{store.message || "Loading message from the backend..."}
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+									incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 								</div>
 								<div className="d-flex flex-column bd-highlight mb-3">
 									<Link to="/register">
@@ -28,9 +30,11 @@ export const Home = () => {
 											Create Account
 										</button>
 									</Link>
-									<button type="button" className="btn btn-outline-primary btn-lg btn-block">
-										Login
-									</button>
+									<Link to="/login">
+										<button type="button" className="btn btn-outline-primary btn-lg btn-block">
+											Login
+										</button>
+									</Link>
 								</div>
 							</div>
 						</div>

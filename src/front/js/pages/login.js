@@ -17,18 +17,24 @@ export const Login = () => {
 						<div className="row p-5">
 							<div className="col-4 p-1">
 								<h1>Login</h1>
-								<img src={rigoImageUrl} />
 							</div>
 							<div className="col-8 pl-5">
-								<div className="alert alert-info">
-									{store.message || "Loading message from the backend..."}
-								</div>
-								<div className="d-flex flex-column bd-highlight mb-3">
-									<button type="button" className="btn btn-primary mb-3 mt-5">
-										Create Account
-									</button>
-									<button type="button" className="btn btn-outline-primary">
-										Login
+								<div>
+									<div className="form-group">
+										<label htmlFor="exampleInputEmail1">Email address</label>
+										<input
+											type="email"
+											className="form-control"
+											id="exampleInputEmail1"
+											aria-describedby="emailHelp"
+										/>
+									</div>
+									<div className="form-group">
+										<label htmlFor="exampleInputPassword1">Password</label>
+										<input type="password" className="form-control" id="exampleInputPassword1" />
+									</div>
+									<button type="submit" className="btn btn-primary btn-lg btn-block mb-3 mt-5">
+										Access
 									</button>
 								</div>
 							</div>
