@@ -33,8 +33,8 @@ def login():
     if(user.password != password or user is None):
         return "user not exist", 404
   
-    #access_token = create_access_token(identity=email)
-    #return jsonify(access_token=access_token)
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
 
 
     response_body = {
