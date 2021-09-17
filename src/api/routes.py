@@ -10,7 +10,6 @@ from flask_jwt_extended import current_user
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import JWTManager
 
-app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 
 api = Blueprint('api', __name__)
 
@@ -33,8 +32,8 @@ def login():
     if(user.password != password or user is None):
         return "user not exist", 404
   
-    #access_token = create_access_token(identity=email)
-    #return jsonify(access_token=access_token)
+    access_token = create_access_token(identity=email)
+    return jsonify(access_token=access_token)
 
 
     response_body = {
